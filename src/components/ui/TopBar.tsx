@@ -1,7 +1,17 @@
 import { Dispatch, Fragment, SetStateAction } from 'react';
-import { Bars3CenterLeftIcon, CheckIcon, XMarkIcon } from '@heroicons/react/24/solid';
-import { Popover, Transition } from '@headlessui/react';
+import {
+	Bars3CenterLeftIcon,
+	CheckIcon,
+	ChevronDownIcon,
+	CogIcon,
+	CreditCardIcon,
+	PencilIcon,
+	XMarkIcon
+} from '@heroicons/react/24/solid';
+import { Menu, Popover, Transition } from '@headlessui/react';
 import { BellIcon } from '@heroicons/react/24/outline';
+import Image from 'next/image';
+import Link from 'next/link';
 
 type Props = {
 	showNav: boolean;
@@ -79,6 +89,69 @@ export const TopBar = ({ showNav, setShowNav }: Props) => {
 						</Popover.Panel>
 					</Transition>
 				</Popover>
+				<Menu as={'div'} className={'relative inline-block text-left'}>
+					<Menu.Button className={'inline-flex w-full justify-center items-center gap-1'}>
+						<Image
+							src={'/man-smiling.jpg'}
+							alt={'User'}
+							width={32}
+							height={32}
+							className={'rounded-full mr-1 border-2 border-white shadow-sm'}
+						/>
+						<span className="hidden md:block font-medium text-gray-700">User</span>
+						<ChevronDownIcon className={'w-4 h-4 text-gray-700'} />
+					</Menu.Button>
+
+					<Transition
+						as={Fragment}
+						enter={'transition ease-out duration-100'}
+						enterFrom={'transform slace-95'}
+						enterTo={'transform scale-100'}
+						leave={'transition ease-in duration-75'}
+						leaveFrom={'transform scale-100'}
+						leaveTo={'transform scale-95'}
+					>
+						<Menu.Items
+							className={
+								'absolute right-0 w-56 z-50 mt-2 origin-top-right bg-white shadow-sm rounded p-4'
+							}
+						>
+							<Menu.Item>
+								<Link
+									href={'#'}
+									className={
+										'flex hover:bg-orange-500 hover:text-white text-gray-700 rounded p-2 text-sm transition-colors ease-in-out duration-300 items-center gap-2'
+									}
+								>
+									<PencilIcon className={'w-4 h-4'} />
+									Edit
+								</Link>
+							</Menu.Item>
+							<Menu.Item>
+								<Link
+									href={'#'}
+									className={
+										'flex hover:bg-orange-500 hover:text-white text-gray-700 rounded p-2 text-sm transition-colors ease-in-out duration-300 items-center gap-2'
+									}
+								>
+									<CreditCardIcon className={'w-4 h-4'} />
+									Billing
+								</Link>
+							</Menu.Item>
+							<Menu.Item>
+								<Link
+									href={'#'}
+									className={
+										'flex hover:bg-orange-500 hover:text-white text-gray-700 rounded p-2 text-sm transition-colors ease-in-out duration-300 items-center gap-2'
+									}
+								>
+									<CogIcon className={'w-4 h-4'} />
+									Settings
+								</Link>
+							</Menu.Item>
+						</Menu.Items>
+					</Transition>
+				</Menu>
 			</div>
 		</section>
 	);
