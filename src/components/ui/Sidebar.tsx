@@ -8,6 +8,32 @@ type Props = {
 	showNav: boolean;
 };
 
+const MENU_ITEMS = [
+	{
+		name: 'Dashboard',
+		icon: HomeIcon,
+		path: '/'
+	},
+	{
+		name: 'Profile',
+		icon: UserIcon,
+		path: '/profile'
+	},
+	{
+		name: 'Credit Card',
+		icon: CreditCardIcon,
+		path: '/credit'
+	}
+];
+
+const ACTIVE_STYLING = 'bg-orange-100 text-orange-500';
+const HOVER_STYLING = ACTIVE_STYLING.split(' ')
+	.map((style) => `hover:${style}`)
+	.join(' ');
+
+const isActivePath = (path: string, currentPath: string) =>
+	path === '/' ? currentPath === path : currentPath.includes(path);
+
 // eslint-disable-next-line react/display-name
 export const Sidebar = forwardRef<HTMLElement, Props>(({ showNav }, ref) => {
 	const router = useRouter();
@@ -19,32 +45,21 @@ export const Sidebar = forwardRef<HTMLElement, Props>(({ showNav }, ref) => {
 			</div>
 
 			<ul className={'flex flex-col gap-2'}>
-				<li>
-					<Link
-						href={'/'}
-						className={`pl-6 py-3 rounded text-center cursor-pointer flex items-center gap-2 transition-colors ease-in-out duration-150 ${
-							router.pathname === '/'
-								? 'bg-orange-100 text-orange-500'
-								: 'text-gray-400 hover:text-orange-500 hover:bg-orange-500'
-						}`}
-					>
-						<HomeIcon className={'h-5 w-5'} />
-						Home
-					</Link>
-				</li>
-				<li>
-					<Link
-						href={'/credit'}
-						className={`pl-6 py-3 rounded text-center cursor-pointer flex items-center gap-2 transition-colors ease-in-out duration-150 border-r-2 ${
-							router.pathname === '/credit'
-								? 'bg-orange-100 text-orange-500 border-r-orange-500'
-								: 'text-gray-400 hover:text-orange-500 hover:bg-orange-100 border-r-transparent'
-						}`}
-					>
-						<CreditCardIcon className={'h-5 w-5'} />
-						Credit Card
-					</Link>
-				</li>
+				{MENU_ITEMS.map(({ name, icon: Icon, path }) => (
+					<li key={name.toLowerCase().replace(' ', '-')}>
+						<Link
+							href={'/'}
+							className={`pl-6 py-3 rounded text-center cursor-pointer flex items-center gap-2 transition-colors ease-in-out duration-150 ${HOVER_STYLING} ${
+								isActivePath(path, router.pathname)
+									? ACTIVE_STYLING
+									: 'text-gray-400'
+							}`}
+						>
+							<Icon className={'h-5 w-5'} />
+							{name}
+						</Link>
+					</li>
+				))}
 			</ul>
 		</aside>
 	);
