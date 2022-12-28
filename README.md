@@ -1,36 +1,33 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+![demo](public/demo.png)
 
-## Getting Started
+## 🛠 Skills
 
-First, run the development server:
+![react][react] ![next][next] ![tailwind][tailwind] ![comintlint][commitlint] ![prettier][prettier]
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+## 📄 Roadmap
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This project is a way to increase my **Tailwind CSS** skills and, of course, increase the **Next.js** skills to.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+For this I follow the video below, but with some personal changes.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+[![youtube][youtube]](https://www.youtube.com/watch?v=ypRJ9ScLmco)
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+### What is missing?
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+-   [ ] **ESLint** configuration;
+-   [ ] Add **Docker** files to run this project with **Docker** in `dev` and `production` mode.
 
-## Learn More
+## 🔗 More About Me
 
-To learn more about Next.js, take a look at the following resources:
+[
+![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)
+](https://linkedin.com/in/daniel-sousa-tutods)
+[![twitter](https://img.shields.io/badge/twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/dsousa_12)
+[![instragram](https://img.shields.io/badge/instragram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://twitter.com/dsousa_12)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+[react]: https://img.shields.io/badge/react-1E4174?style=for-the-badge&logo=react&logoColor=white
+[next]: https://img.shields.io/badge/Next.js-1E4174?style=for-the-badge&logo=next.js&logoColor=white
+[tailwind]: https://img.shields.io/badge/tailwindcss-1E4174?style=for-the-badge&logo=tailwindcss&logoColor=white
+[commitlint]: https://img.shields.io/badge/commitlint-1E4174?style=for-the-badge&logo=commitlint&logoColor=white
+[prettier]: https://img.shields.io/badge/prettier-1E4174?style=for-the-badge&logo=prettier&logoColor=white
+[youtube]: https://img.shields.io/badge/youtube-red?style=for-the-badge&logo=youtube&logoColor=white
